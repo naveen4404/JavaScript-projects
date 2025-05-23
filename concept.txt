@@ -220,6 +220,20 @@ To select an element we use -> document.querySelector(.class/tageName).textConte
                                document.querySelector(.class/tageName).addEventListener('click',function(){
                                 //statements
                                });
+==================================================================================================================================================
+*** If we select class that is common to more than one element , only the first element is selected
 
-                               
+    to select all the element of that class , we need to use "document.querySelectorAll('.class-name');" 
+
+    thus all the elements are formed as a list , so that we can access them
+
+
+Element.classList --> is used to work with all the classes of that element [WORKING WITH THE CLASSES]
+
+                      add() -- adds class passed , remove() -- removes the class passed 
+                      
+                      contains() -- checks whether the passed class is present or not
+
+
+
 
