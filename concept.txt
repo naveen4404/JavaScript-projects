@@ -1,0 +1,225 @@
+Javascript is a hight level object oriented and multi paradigm programming language.
+
+multiparadigm- flexible and versatile , can use all types of programming styles
+
+oop-mostly based on objects
+
+ES6 - ECMAScript
+===============================================================================================================================
+Datatypes:
+    number
+    boolean
+    string
+    null (nothing , empty , value unknown)
+    undefined (empty , value not assigned )
+    bigint
+===============================================================================================================================
+
+variable - "named storage of data" 
+value - any data or unit of information
+
+===============================================================================================================================
+ 3 ways of writing variable :
+
+    (i) let : mutable , but  cannot be redeclared 
+        
+    (ii) const : immutable , must be initialized at the time of declaration
+         
+         const birtYear; X
+         const birtYear=2004; 
+    
+    (iii) var 
+
+===============================================================================================================================
+Operators :
+
+    Mathematical or arithmatic : +,-,*,/,**,%
+    assignment : = , += ,-+ ,/+ ,.....
+    logical : > , < ,== ,!=, <= , >=,===,!== (null is only equals to undefined vice versa)
+    increment :++
+    decrement :--
+    conditional operator : (condition) ? (expIfTrue) : expIfFalse  [EXPRESSION]
+    null coalescing operator : (left) ?? (right)  --> returns right if left is nullish(null or undefined) else returns left
+    bitwise : rarely used
+
+Operators precedence :
+     when there are more than one operator in expression , operator precedence tells order of the evaluation
+
+     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
+
+================================================================================================================================
+
+Type conversion : Explicitly converting one type to another 
+
+                Number('')
+                String(1)
+
+Type Coercion : Implicitly Js coverts one type into another
+
+                Ex : 'Number'+10 // Number 10
+                     '1'+'2'    //12
+                     '1'+2      //12
+                     '2'-'1'    //1 
+            
+===============================================================================================================================
+
+Truthy and Falsy values :
+
+        Falsy values : values that return false upon converting them into boolean(0,'',null,undefined,NaN)
+        Truthy values: values that return true (all values except falsy values)
+
+===============================================================================================================================
+        
+Taking decisions :  (CONTROL STATEMENTS)
+
+        if(condition){
+            //statements
+        }else if(condition){
+            //statements
+        }else{
+            //statements
+        }
+
+Switch statement :
+
+        switch(value) {
+            case 1 : //statements
+                    break;
+            case 2 : //statements
+                    break;
+            case 3 : //statements
+                    break;
+            default ://statements
+        }
+===============================================================================================================================
+strict mode :
+        'use strict'
+        allows developer to write more secure code
+        shows errors those are skipped by Javascript
+===============================================================================================================================
+Functions :
+            block of code that does a specific task
+            can be reused any no of times in the code
+            returns a value that can be used further
+
+            Types :
+
+            Function declaration:
+
+                    function functionName(parameters){
+                        //body
+                        return value;
+                    }
+            Function Expression:
+
+                    const variable= function(parameters){
+                        // body
+
+                        return value;
+                    }
+
+            *function of type declaration can be called above its declaration where as we can not do that with function expression.
+
+            Arrow functions :
+
+                    another type of function expression
+
+                    const variable= (parameters)=>{
+                        //body
+                        return value;
+                    }
+================================================================================================================================
+Arrays :
+        a container to store mutple values
+
+        const arr=[1,2,3,4,5]
+        const arr=new Array(1,2,3,4,5)
+
+        Basic methods:
+
+            1)arr.push(value) - adds a passed value at the end.
+            2)arr.unshift(value) - adds a passed value at the beginning.
+            3)arr.pop() - removes last element and returns it.
+            4)arr.shift() - removes element at the beginning and returns it.
+            5)arr.indexOf(element) - return the index of the element , if array doesn't contain that element it returns -1.
+            6)arr.includes(element) - tells whether the passed element is present or not (return true or false).
+================================================================================================================================
+Objects : stores related data as property - value pairs and can also contain functios specific to that object .
+
+
+const mark = {
+    fullName : 'Mark Miller',
+    mass : 78,
+    height : 1.69,
+    
+    calcBMI : function(){
+        this.bmi= this.mass /(this.height*this.height);
+        return this.bmi;
+    }
+};
+const john = {
+    fullName : 'John Smith',
+    mass : 92,
+    height : 1.95,
+    calcBMI : function(){
+        this.bmi= this.mass /(this.height*this.height);
+        return this.bmi;
+    }
+};
+
+if(mark.calcBMI() < john.calcBMI()){
+    console.log(`John Smith's BMI (${john.bmi}) is higher than Mark Miller's (${mark.bmi})!`);
+}
+else{
+    console.log(`Mark Miller's BMI (${mark.bmi}) is higher than John Smith's (${john.bmi})!`);
+}
+
+can also access property values with [] :
+
+        mark['fullName'] - property name must be written as string even it is function (mark['calcBMI'()])
+                            can pass any valid expression in the brackets
+        
+        But when using dot operator , we must use actual property name (mark.height , mark.calcBMI()) 
+
+        this is nothing but that object .
+
+        when properties need to be accessed dynamically brackets[] are used .
+=====================================================================================================================================
+
+Loops :     (CONTROL STATEMENTS)
+       for loop :
+
+                for(let i=0;i<value;i++){
+
+                }
+
+        while loop:
+
+                while(condition){
+                                            //we use it when no of executions are not known
+                }
+        break : terminates the loop execution .
+
+        continue : skip that perticular execution when some condition met .
+=================================================================================================================================
+
+DOM : Document Object Model - It is a structured representation of html elements , using that we can manipulate html elements
+                              and CSS styles 
+
+                              It in the form of tree.
+
+                              DOM is created when the html page is loaded in the browser.
+
+
+To select an element we use -> document.querySelector(.class/tageName).textContent="some text";
+
+                               const varriable = document.querySelector(.class/tageName).value;
+        
+                               document.querySelector(.class/tageName).style.propertName(camelcase)='value';
+
+                               document.querySelector(.class/tageName).addEventListener('click',function(){
+                                //statements
+                               });
+
+                               
+
