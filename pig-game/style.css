@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #efe5dc;
+  position: relative;
+}
+.title {
+  position: absolute;
+  top: 80px;
+  left: 29%;
+  font-size: 40px;
+  font-family: "Luckiest Guy", arial;
+}
+main {
+  width: 750px;
+  height: 400px;
+  background-color: #d0ada7;
+  display: flex;
+  position: relative;
+  border-radius: 15px;
+  font-family: "roboto", arial;
+}
+section {
+  padding: 50px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.player-info,
+.current-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-0,
+.score-1,
+.name {
+  font-size: 30px;
+}
+.name {
+  margin-bottom: 20px;
+}
+.current-0,
+.current-1 {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.player-active {
+  background-color: #c6b8bc;
+  border-radius: 15px;
+}
+.current-box {
+  background-color: white;
+  padding: 7px;
+  border-radius: 15px;
+}
+button {
+  position: absolute;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 10px;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+.hold-btn {
+  bottom: 45px;
+  left: 45%;
+}
+.roll-dice {
+  left: 44%;
+  bottom: 95px;
+}
+.new-game {
+  left: 42%;
+  top: 30px;
+}
+.hold-btn:active {
+  bottom: 43px;
+  left: 45.5%;
+}
+.roll-dice:active {
+  left: 44.5%;
+  bottom: 93px;
+}
+.new-game:active {
+  left: 42.5%;
+  top: 32px;
+}
+
+img {
+  width: 80px;
+  position: absolute;
+  left: 45%;
+  top: 150px;
+}
+.winner {
+  background-color: #0c0c2b;
+  color: white;
+}
+.hide-dice {
+  display: none;
+}
