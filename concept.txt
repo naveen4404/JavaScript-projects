@@ -234,6 +234,8 @@ Element.classList --> is used to work with all the classes of that element [WORK
                       
                       contains() -- checks whether the passed class is present or not
 
+Another way of selecting an element is through its id [document.getElementById('id-name')]
+
 
 
 
