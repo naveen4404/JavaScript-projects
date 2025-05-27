@@ -72,6 +72,7 @@ button {
   border-radius: 10px;
   opacity: 0.7;
   transition: all 0.2s;
+  cursor: pointer;
 }
 .hold-btn {
   bottom: 45px;
@@ -84,18 +85,6 @@ button {
 .new-game {
   left: 42%;
   top: 30px;
-}
-.hold-btn:active {
-  bottom: 43px;
-  left: 45.5%;
-}
-.roll-dice:active {
-  left: 44.5%;
-  bottom: 93px;
-}
-.new-game:active {
-  left: 42.5%;
-  top: 32px;
 }
 
 img {
@@ -147,6 +136,11 @@ img {
     left: 37%;
     top: 30px;
   }
+  img {
+    width: 60px;
+    left: 43%;
+    top: 100px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -183,5 +177,12 @@ img {
   }
   body {
     position: fixed;
+  }
+  img {
+    width: 50px;
+    left: 42%;
+    top: 45%;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
   }
 }
