@@ -6,20 +6,19 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #efe5dc;
-  position: relative;
 }
 .title {
-  position: absolute;
-  top: 80px;
-  left: 29%;
   font-size: 40px;
   font-family: "Luckiest Guy", arial;
+  margin-bottom: 40px;
+  text-align: center;
 }
 main {
-  width: 750px;
+  width: 700px;
   height: 400px;
   background-color: #d0ada7;
   display: flex;
@@ -111,4 +110,78 @@ img {
 }
 .hide-dice {
   display: none;
+}
+
+@media (max-width: 800px) {
+  main {
+    width: 600px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 450px;
+    height: 300px;
+  }
+  .title {
+    font-size: 30px;
+  }
+  button {
+    font-size: 12px;
+  }
+  .score-0,
+  .score-1,
+  .name {
+    font-size: 20px;
+  }
+  .hold-btn {
+    bottom: 40px;
+    left: 42%;
+  }
+  .roll-dice {
+    left: 41%;
+    bottom: 85px;
+  }
+  .new-game {
+    left: 37%;
+    top: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    width: 320px;
+    height: fit-content;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 25px;
+  }
+  button {
+    font-size: 12px;
+  }
+  .score-0,
+  .score-1,
+  .name {
+    font-size: 20px;
+  }
+  .hold-btn {
+    bottom: 2%;
+    left: 25%;
+  }
+  .roll-dice {
+    left: 55%;
+    bottom: 2%;
+  }
+  .new-game {
+    left: 34%;
+    top: 2%;
+  }
+  .current-box {
+    margin-top: 15px;
+  }
+  body {
+    position: fixed;
+  }
 }
