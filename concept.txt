@@ -5,7 +5,7 @@ multiparadigm- flexible and versatile , can use all types of programming styles
 oop-mostly based on objects
 
 ES6 - ECMAScript
-===============================================================================================================================
+===============================================================================================================================================
 Datatypes:
     number
     boolean
@@ -13,12 +13,12 @@ Datatypes:
     null (nothing , empty , value unknown)
     undefined (empty , value not assigned )
     bigint
-===============================================================================================================================
+============================================================================================================================================
 
 variable - "named storage of data" 
 value - any data or unit of information
 
-===============================================================================================================================
+============================================================================================================================================
  3 ways of writing variable :
 
     (i) let : mutable , but  cannot be redeclared 
@@ -30,7 +30,7 @@ value - any data or unit of information
     
     (iii) var 
 
-===============================================================================================================================
+============================================================================================================================================
 Operators :
 
     Mathematical or arithmatic : +,-,*,/,**,%
@@ -47,7 +47,7 @@ Operators precedence :
 
      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
 
-================================================================================================================================
+=============================================================================================================================================
 
 Type conversion : Explicitly converting one type to another 
 
@@ -61,14 +61,14 @@ Type Coercion : Implicitly Js coverts one type into another
                      '1'+2      //12
                      '2'-'1'    //1 
             
-===============================================================================================================================
+============================================================================================================================================
 
 Truthy and Falsy values :
 
         Falsy values : values that return false upon converting them into boolean(0,'',null,undefined,NaN)
         Truthy values: values that return true (all values except falsy values)
 
-===============================================================================================================================
+============================================================================================================================================
         
 Taking decisions :  (CONTROL STATEMENTS)
 
@@ -91,12 +91,12 @@ Switch statement :
                     break;
             default ://statements
         }
-===============================================================================================================================
+============================================================================================================================================
 strict mode :
         'use strict'
         allows developer to write more secure code
         shows errors those are skipped by Javascript
-===============================================================================================================================
+============================================================================================================================================
 Functions :
             block of code that does a specific task
             can be reused any no of times in the code
@@ -118,7 +118,8 @@ Functions :
                         return value;
                     }
 
-            *function of type declaration can be called above its declaration where as we can not do that with function expression.
+            *function of type declaration can be called above its declaration where as we can not do that with 
+            function expression and arrow funcn.
 
             Arrow functions :
 
@@ -128,7 +129,10 @@ Functions :
                         //body
                         return value;
                     }
-================================================================================================================================
+
+            **arrow function does not support arguments keyword , where as remaining types does.
+             [except arrow type we can pass any no.of args irrespective of no.of parameters]
+=============================================================================================================================================
 Arrays :
         a container to store mutple values
 
@@ -143,7 +147,7 @@ Arrays :
             4)arr.shift() - removes element at the beginning and returns it.
             5)arr.indexOf(element) - return the index of the element , if array doesn't contain that element it returns -1.
             6)arr.includes(element) - tells whether the passed element is present or not (return true or false).
-================================================================================================================================
+=============================================================================================================================================
 Objects : stores related data as property - value pairs and can also contain functios specific to that object .
 
 
@@ -184,7 +188,7 @@ can also access property values with [] :
         this is nothing but that object .
 
         when properties need to be accessed dynamically brackets[] are used .
-=====================================================================================================================================
+==================================================================================================================================================
 
 Loops :     (CONTROL STATEMENTS)
        for loop :
@@ -201,7 +205,7 @@ Loops :     (CONTROL STATEMENTS)
         break : terminates the loop execution .
 
         continue : skip that perticular execution when some condition met .
-=================================================================================================================================
+==============================================================================================================================================
 
 DOM : Document Object Model - It is a structured representation of html elements , using that we can manipulate html elements
                               and CSS styles 
@@ -235,7 +239,99 @@ Element.classList --> is used to work with all the classes of that element [WORK
                       contains() -- checks whether the passed class is present or not
 
 Another way of selecting an element is through its id [document.getElementById('id-name')]
+===================================================================================================================================================
+
+How the javascript works:
+
+JAVASCRIPT : it is a high level prototype based, object oriented , multi paradigm ,interpreted or JUST IN TIME COMPILED, dynamic, garbage collected
+             programming language with first class functions and single threaded , non-blocking concurrency model .
+
+
+code is executed in CALL STACK , for each block of execution there will be an execution context.
+
+
+SCOPE :
+
+    scoping : how the program variables are organized and accessed .
+
+    scope : space or the environment where the variables are declared .
+
+    scope of a variable : the region of our code where certain variables can be accessed
+
+Three types of scope :
+
+    Global scope : variable or declared outside of functions and blocks .
+                   they can be accessed through out the program.
+
+    Function scope : variables are declared inside the function only and also they can be access in that function only.
+
+    Block scope : variable are declared in blocks (conditional , loop statements) and they can be accessed inside that block only.
+                  It is only applicable to variables declared using let or const.
+    
+    **variables declared with var can be accessed outside of the block where it is declared , but it follows functional scope .
+
+    **If inner scope and outer scope has variable with same name , inner scope variable is accessed when it is used .
+
+    The accessing is done based on the scope chain.
+
+***SCOPE CHAIN DOES NOT CAHNGE BASED ON THE ORDER OF EXECUTION OF THE CALL STACK.
+==================================================================================================================================================
+
+HOISTING :  making some variables can be used or accessed before their declarations
+
+            - function declarations supports hoisting .
+            -var variable supports but the result we get when accessing is 'undefined'
+            -let and const does not support hoisting , we get 'before initialization' error , in this case they are put in temporal dead jone (TDZ)
+             until their declaration.
+                                                                                                                               
+            -function expressions and arrow functions does not support hoisting.
+
+this keyword - it points the owener in whit it is prensent
+
+                if we use this in object , this is the object
+
+                if we use it to point function , the result will be undefined
+
+                if we use it to point arrow function , the result will be result of global this (window)
+
+
+Memory management : 
+
+                All the values in js undergoes memory life cycle
+
+                alloction ---> using ----> releasing
+
+                two memories:
+
+                        Call Stack                      Heap
+                             ^                            ^
+                             |                            |
+                        all the primitives              all the objects
+                    and Reference to objects
+
+                Ex:
+                    const ram={                   const ram={
+                        name:'ram',  ----------->          name:'ram',
+                        age:20                             age:20,
+                    }                                      surName='kumar'}
+                                                                ^
+                                                                |
+                    const ram2=ram;------------------------------
+
+                    ram2.surName='kumar';
+
+                    to make copy : const ram2={...ram}  //level one copy i.e., only primitives are copied , the nested objects will be referenced.
+
+                    to make deep copy we use , const ram2=structuredClone(ram);
 
 
 
 
+        Garbage collection :
+
+                        - values in call Stack are removed , when its parent function completes its execution
+                        - global values does not get cleared
+                        - the objects in tha heap will be removed when they are dead ,i.e., when they does not have any reference in the call stack.
+                        - foloows the algorithm called MARK AND SWEEP .
+
+===================================================================================================================================================
