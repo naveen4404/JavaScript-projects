@@ -286,9 +286,9 @@ HOISTING :  making some variables can be used or accessed before their declarati
                                                                                                                                
             -function expressions and arrow functions does not support hoisting.
 
-this keyword - it points the owener in whit it is prensent
+this keyword - it points the owner in which it is present
 
-                if we use this in object , this is the object
+                if we use this in object , 'this' is the object
 
                 if we use it to point function , the result will be undefined
 
@@ -332,6 +332,77 @@ Memory management :
                         - values in call Stack are removed , when its parent function completes its execution
                         - global values does not get cleared
                         - the objects in tha heap will be removed when they are dead ,i.e., when they does not have any reference in the call stack.
-                        - foloows the algorithm called MARK AND SWEEP .
+                        - follows the algorithm called MARK AND SWEEP .
 
 ===================================================================================================================================================
+
+Destructuring : breaking a data structure into variables with values .
+
+Array destructuring :
+
+                    const details=['ramu','kumar','20',['krish','hari']];
+
+                    let [firstName,lastName] = details;
+
+                    let[name, ,age]=datails;
+
+                    let[name, , ,[friend1,friend2]]=datails;  //nested
+
+Object destructuring :
+
+                    const datails={
+                        firstName:'ramu',
+                        lastName:'kumar',
+                        age:20,
+                        parents={
+                            father:'rao',
+                            mother:'rani'
+                        }
+                    }
+
+
+                    let {firstName,lastName}=details;
+
+                    to have different variable name other than property names -- let {firstName:me , lastName:surName}=details;
+
+                    let {firstName,parents:{father,mother}}=datails; //nested 
+
+                    destructuring can be done in the parameter of a function.
+
+                    It is very useful when working with the apis.
+
+spread operator - unpacks the arrays 
+
+                arr=[1,2,3,4];
+                console.log(...arr)   // 1 2 3 4
+
+                it is also used for creating arrays from existing arrays  and also for shallow copying.
+
+                it canbe used with objects(shallow copy) or any iterable.
+
+rest operator : it packs the individual elements.
+
+                me=['ram','kumar',30,'rao','rani'];
+
+                [firstName,lastName, ,...parents]=me;
+
+
+                It can be used with objects also.
+
+short circuting : Logical operators can be used with any datatype and returns any datatype.
+
+                || operator : the evaluation of the expression stops when ever a truthy value comes and returns that truthy value.
+
+                ex: 5 || 6       // 5
+                    ''||'h'      //'h'
+                    'hello' || 'hi'    //'hello'
+
+                    if all the values are falsy , the last value is returned.
+
+                && operator : the evaluation of the expression stops when ever a falsy value completes and returns that falsy value.
+
+                ex : null && truth          //null
+
+                    'k' && 5 && truth && '' && 1        //''
+
+                    if all the values are truthy , the last value is returned.
