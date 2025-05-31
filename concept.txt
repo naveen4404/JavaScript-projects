@@ -406,3 +406,186 @@ short circuting : Logical operators can be used with any datatype and returns an
                     'k' && 5 && truth && '' && 1        //''
 
                     if all the values are truthy , the last value is returned.
+===================================================================================================================================================
+for of loop :
+                const days=['mon','tue','wed','thurs','fri','sat'];
+
+                for(const day of days){
+                    console.log(day);
+                }
+
+                to get index we can use entries method,
+
+                for(const day of days.entries()){
+                    console.log(day); // [0,'mon']-----
+                }
+
+===================================================================================================================================================
+optional chaining (?.) :
+
+            it is used to check whether the elements in the array or properties in the object are present or not.
+
+            if they are not present , immediately undefined is returned.
+
+===================================================================================================================================================
+Looping over objects :
+
+            over property names :
+
+                for(const key of Object.keys(obj)){
+                    console.log(key)
+                }
+
+            over values :
+
+                for(const val of Object.values(obj)){
+                    console.log(val);
+                }
+
+            over keys and valuse :
+
+                for(const [key,value] of Object.entries(obj)){
+                    console.log(key,value);
+                }
+
+=================================================================================================================================================
+set : unordered collection of unique elements.
+
+    const set1 = new Set ([1,2,3,4,5,1,2]) 
+    const set2 = new Set ([4 ,5 , 6,7,8,5])
+
+    methods :
+                set1.add(10);
+                set1.delete(3);
+                set1.has(1);
+                set1.intersection(set2);
+                set1.union(set2);
+                set1.difference(set2);
+                set1.symmetricDifference(set2);
+                set1.isDisjointFrom(set2);
+                set1.isSubsetOf(set2);
+                set1.isSuperSetOf(set2);
+
+                to get size : set.size;
+==================================================================================================================================================
+map : unordered collection of keys and values , similar like objects but the difference is " in maps the keys can be of any datatype where as
+      in objects the keys(properties) must be strings" .
+
+    const map=new Map();
+
+    to add element: map.set(key,value);
+    to delete     : map.delete(key);
+    to check whether the key is present or not : map.has(key);
+    to get value of key : map.get(key);
+
+
+    Another way of creating map :
+
+    const map=new Map([['name','ram'],['age',20],[1,'hyderabad'],[2,'bengalore']]);
+
+==================================================================================================================================================
+string : sequence of characters , immutable
+
+        ex : str=I love javascript programming;
+
+        accessing : str[0]    // I 
+
+        methods :
+
+        str.slice(startIdx , endIdx)  // A new string containing the extracted section of the string.
+
+        str.indexOf('l')    // 2         The index of the first occurrence of searchString found, or -1 if not found.
+
+        str.lastIndexOf(i)  // 26         The index of the last occurrence of searchString found, or -1 if not found.
+
+        str.replace('I' , 'We')           return a new string with replacing first argument with second , it does this only for first occurance
+
+        str.replacAll()  // replaces all
+
+        str.toUppercase()  // lowercase to toUppercase
+
+        str.toLowerCase()  // upper to lower
+
+        str.split(' ')   // ['I','love','javascript','programming']  
+
+        str.trim()  // removes leading and ending spaces or any new line characters
+
+        str.padStart(30 , *)  // pads at start with * , to make sure the length of the str is 30
+
+        str.padEnd(30,*)    // similar but does at last
+
+        str.startsWith('I')  // returns true or false by checking whether the string starts with the passed string 
+
+        str.endswith('T')   // similar but checks at last
+
+===================================================================================================================================================
+closure : A closure is the closed - over variable environment of the execution context in which a function was created, even after that 
+            execution context is gone.
+
+        A closure gives a function access to all the variables of its parent function , even after the parent function has returned.
+
+        The function keeps reference to its outer scope , which preserves the scope chain throughout time.
+
+        A closure make sure that the function does not loose connection to the variables that exist at the functions birth place. 
+
+        A closure is like a backpack that a function carries around where ever it goes . 
+        This packpack has all the variables that were present in the environment where the function was created.
+
+=======================================================================================================================================================================
+ARRAYS :
+
+        let arr=['a','b','c','d','e'];
+        //SLICE
+
+        console.log(arr.slice(2)); // ["c", "d", "e"]
+
+        let newArr=arr.slice(); // ["a", "b", "c", "d", "e"]
+        console.log(newArr);   
+
+        console.log(arr.slice(-2)); //["d", "e"]
+
+        console.log(arr.slice(0,-3));  //["a", "b"]
+
+        //SPICE
+
+        // mutates the array
+
+        //console.log(arr.splice(2)); //["c", "d", "e"]
+        //console.log(arr)      // ["a", "b"]
+        // console.log(arr.splice(1,2));// ["b", "c"]
+        // console.log(arr)        //["a", "d", "e"]
+
+        const arr2 =['j','i','h','g','f'];
+
+        //REVERSE
+        //muytates the array
+        console.log(arr2.reverse()); // ["f", "g", "h", "i", "j"]
+        console.log(arr2)             // ["f", "g", "h", "i", "j"]
+
+        //concat
+
+        const letters=arr.concat(arr2);
+
+        console.log(letters); // ["a", "b", "c", "d", "e", "f", "g", ...]
+
+        // AT METHOD 
+
+        const arr3=[23,24,25];
+        console.log(arr3.at(0));
+
+        console.log(arr3[-1]);  //undefined
+        console.log(arr3.at(-1))//  25
+
+=======================================================================================================================================================================
+let transactions=[2000,-3500,400,10000,-2300,25000];
+
+//FOR EACH 
+
+transactions.forEach(function(transaction){
+      transaction >0 ? console.log(`deposited ${transaction}`) : console.log(`withdrawn ${Math.abs(transaction)}`)
+});
+
+//we can not break forEach
+
+=====================================================================================================================================================================
+
