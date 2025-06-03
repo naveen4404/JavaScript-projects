@@ -61,6 +61,75 @@ Type Coercion : Implicitly Js coverts one type into another
                      '1'+2      //12
                      '2'-'1'    //1 
             
+numbers : 
+
+        const height='100px';
+        const num=Number.parseInt(height);  // to make this work string must be start with number
+        console.log(num);   //100
+
+
+        const width='2.5rem';
+        const floatNum=Number.parseFloat(width);
+        console.log(floatNum);   // 2.5
+
+        console.log(Number.parseInt(width)); //2
+
+
+        to check if something is number or not : Number.isFinite(20) ;//returns boolean
+
+
+Math and Rounding :
+
+        Math.sqrt(25); //5
+
+        Math.max(2,3,4,2,5,6,'7',4); //7  //it does type Coercion
+
+        Math.min(2,3,4,5,6); // 2
+
+        Math.PI //3.1415......
+
+        Math.random();  //gives number between 0 and 1
+
+
+Rounding :
+
+        Math.trunc() ; simply removes decimal parent
+
+        Math.round() ; rounds to the nearest integer
+
+        Math.ceil() ; rounds up
+
+        Math.floor() ; rounded down
+
+
+    rounding decimal :
+
+             (2.7).toFixed(3) ;  //2.700
+
+
+
+BigInt :
+        In JavaScript, the “number” type cannot safely represent integer values larger than (253-1) (that’s 9007199254740991),
+         or less than -(253-1) for negatives.
+
+        BigInt value is created by appending n to the number
+
+        const bigInt = 1234567890123456789012345678901234567890n;
+
+        to convert numbers to BigInt : BigInt(3444)
+
+        BigInt to Number --> Number(3444n)
+
+        we can not add a BigInt and Number , Explicitly must to type conversion
+
+        but comparision can be done
+
+        with division only integer part is returned
+
+        (11n/3n)-->3n
+
+         
+
 ============================================================================================================================================
 
 Truthy and Falsy values :
@@ -239,6 +308,17 @@ Element.classList --> is used to work with all the classes of that element [WORK
                       contains() -- checks whether the passed class is present or not
 
 Another way of selecting an element is through its id [document.getElementById('id-name')]
+
+
+.insertAdjacentHtml(position,text) : adds new element 
+
+                <!-- beforebegin -->
+                <p>
+                <!-- afterbegin -->
+                foo
+                <!-- beforeend -->
+                </p>
+                <!-- afterend -->
 ===================================================================================================================================================
 
 How the javascript works:
@@ -588,4 +668,248 @@ transactions.forEach(function(transaction){
 //we can not break forEach
 
 =====================================================================================================================================================================
+map function : creates new array by transforming the old one.
 
+            const nums=[2,3,4,5,6];
+            const nums2=nums.map(x=>x*2);
+            console.log(nums2)
+
+
+filter : filters the array elements using the call back function , creates new array.
+
+            const nums=[-1,2,3,-4,1,1];
+            const positives=nums.filter(x=>x>-1);
+            console.log(positives);
+
+reduce : it reduces the value into single value.
+
+            const nums=[2,3,4,5,6];
+            const sum=nums.reduce(function(acc,cur){
+            return acc+cur;
+            },0);
+            console.log(sum);
+
+            // acc : accumulator
+            // cur : current element
+            0 is the initial value of the accumulator.
+
+find :
+        // find method
+
+        const movements= [200, -200, 340, -300, -20, 50, 400, -460];
+
+        // retrives an element from the array based on some condition
+
+        // return first element which satisfies the condition
+
+        const firstWithdrawl=movements.find(mov => mov<0);
+        console.log(firstWithdrawl);
+
+findIndex() :
+
+            it is used to fine the index of an element based on passed callback function.
+
+            const index=accounts.findIndex(
+                    acc=> acc.userName===currentUser.userName
+                );
+
+similarly there are findLast() , findLastIndex() --> does the same thing but from last
+
+some :
+
+        returns true or false , if any of the element in the array satisfies passed condition
+
+        const movements= [200, -200, 340, -300, -20, 50, 400, -460]
+
+        const doescontainNeg=movements.some(elem => elem<0); //true
+
+every :
+        if every element passes the condition in call back function , then it returns true else false
+
+flat : converts mulyi dimentional array into the one dimentional array.
+
+
+    const arr=[[1,2],3,4,5,[6,7,8]];
+    console.log(arr.flat()); // [1,2,3,4,5,6,7,8];
+
+    the above one flats at one level only , if we want to flat the array that is having multiple nesting we need to specify the depth.
+    By default the depth is 1.
+
+    const arr=[[1,[2,3,4]],5,6,[7,8]];
+    console.log(arr.flat(2)); // [1,2,3,4,5,6,7,8]
+
+flatMap() : this method combines the operations of both map and flat.
+
+            **using this method we can flat the array by only 1 level.
+
+=========================================================================================================================================================================
+sorting : in JavaScript , the sorting is done based upon the element's string value.
+
+        to sort the number arrays , we need to pass a comparator call back
+
+    sort():
+            sort method changes the original array .
+
+            const arr=[1,6,7,4,6];
+            arr.sort((a,b)=> a-b); // asce 
+            console.log(arr);   //[1,4,6,6,7]
+
+            arr.sort((a,b)=> b-a);  // desc
+
+===========================================================================================================================================================================
+more ways of creating and filling arrays :
+
+        const arr=new Array(1,2,3,4,5,6);
+
+        const arr2=new Array(7); // creates an empty array of length 7
+
+        fill() :
+
+                arr2.fill(1);   //[1,1,1,1,1,1,1]
+
+                arr2.fill(2,2,5);  //[1,1,2,2,2,1,1]
+
+        Array.from():
+
+                the first parameter is the object specifying the length , the next parameter is any call back function
+
+                const arr3= Array.from({length:7} , ()=> 1) ;  //[1,1,1,1,1,1,1]
+
+                const randomDice = Array.from({ length: 100 }, function () {
+                                    return Math.trunc(Math.random() * 6) + 1;
+                                    });
+
+                                    console.log(randomDice);
+=============================================================================================================================================================================
+non- destructive array methods :
+
+        toReversed()
+        toSorted()
+        toSpliced()
+
+        const arr = [1, 2, 3, 4, 5];
+        const arr2 = arr.with(1, 100);
+        console.log( arr2); //[1,100,3,4,5]
+
+to mutate original array :
+
+        * .push()
+        * .unshift()
+        * .pop()
+        * .shift()
+        * .splice()
+        * .reverse()
+        * .sort()
+        * .fill()
+
+a new array base on origina :
+
+        * .map()
+        * .filter()
+        * .slice()
+        * .with()
+        * .flat()
+        * .flatMap()
+        * .toReversed()
+        * .toSorted()
+        * .toSpliced()
+        * .concat()
+
+an array index :
+
+        * .indexOf()
+
+        based on condition :
+
+        * .findIndex()
+        * .findLastIndex()
+
+an array element ;
+
+        based on condition :
+
+        * .find()
+        * .findLast()
+
+       if we know the index already 
+
+        * .at()
+
+to know if array includes :
+
+        * .includes()
+
+        based on test conditions :
+
+        * .some()
+
+        * .every()
+
+A new string :
+
+        * .join()
+
+to transform to value :
+
+        * .reduce()
+
+to just loop array :
+
+        * .foreach()
+
+=============================================================================================================================================================================
+
+DATE:
+
+        //Create a date
+
+        // by using Date constructor
+
+        const now = new Date();
+        console.log(now);   //Tue Jun 03 2025 14:30:02 GMT+0530 (India Standard Time)
+
+        //Date methods
+        console.log(now.getFullYear());
+        console.log(now.getMonth());
+        console.log(now.getDate());
+        console.log(now.getHours());
+        console.log(now.getMinutes());
+        console.log(now.toISOString());  //2025-06-03T09:00:02.761Z
+
+operations on dates :
+
+        we can subtract two dates 
+        the dissence returns the time stamp in milli seconds.
+
+        const now = new Date();
+        const past=new Date(2025,5,23);
+
+        const daysbetween = Math.round((now -past)/(1000*60*60*24));
+=============================================================================================================================================================================
+TIMERS :
+
+        settTimeOut timer : runs only occurance
+
+        const timer=setTimeout(() => console.log('here is your pizza'), 3000);
+        console.log('waiting..');
+
+        // this mechanism calles assycronous js mechanism
+
+        // the call back function runs only once 
+
+        to break the timer :
+
+            if(condition){
+                cleartimeOut(timer);
+            }
+
+        
+        setInterval :  executes the call back function repetedly after certain time setInterval
+
+        setInter(function(){
+            const now=new Date();
+            console.log(now);
+        } , 1000);   
+
+
+==========================================================================================================================================================================
