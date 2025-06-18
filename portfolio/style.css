@@ -1,0 +1,31 @@
+body {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  border-bottom: solid 1px rgb(216, 216, 216);
+}
+.name {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 26px;
+  align-items: center;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.nav-link a img {
+  width: 33px;
+}
