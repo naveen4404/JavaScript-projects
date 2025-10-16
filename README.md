@@ -4,12 +4,12 @@ oop-mostly based on objects
 ES6 - ECMAScript
 ===============================================================================================================================================
 Datatypes:
-    number
-    boolean
-    string
-    null (nothing , empty , value unknown)
-    undefined (empty , value not assigned )
-    bigint
+    number,
+    boolean,
+    string,
+    null (nothing , empty , value unknown),
+    undefined (empty , value not assigned ),
+    bigint,
 
 variable - "named storage of data" 
 value - any data or unit of information
