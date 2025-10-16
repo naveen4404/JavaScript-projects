@@ -2,7 +2,7 @@ Javascript is a hight level object oriented and multi paradigm programming langu
 multiparadigm- flexible and versatile , can use all types of programming styles
 oop-mostly based on objects
 ES6 - ECMAScript
-===============================================================================================================================================
+
 Datatypes:
     number,
     boolean,
@@ -14,7 +14,7 @@ Datatypes:
 variable - "named storage of data" 
 value - any data or unit of information
 
-============================================================================================================================================
+
  3 ways of writing variable :
 
     (i) let : mutable , but  cannot be redeclared 
@@ -26,7 +26,7 @@ value - any data or unit of information
     
     (iii) var 
 
-============================================================================================================================================
+
 Operators :
 
     Mathematical or arithmatic : +,-,*,/,**,%
@@ -43,7 +43,7 @@ Operators precedence :
 
      https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
 
-=============================================================================================================================================
+
 
 Type conversion : Explicitly converting one type to another 
 
@@ -126,14 +126,14 @@ BigInt :
 
          
 
-============================================================================================================================================
+
 
 Truthy and Falsy values :
 
         Falsy values : values that return false upon converting them into boolean(0,'',null,undefined,NaN)
         Truthy values: values that return true (all values except falsy values)
 
-============================================================================================================================================
+
         
 Taking decisions :  (CONTROL STATEMENTS)
 
@@ -196,7 +196,7 @@ Functions :
 
             **arrow function does not support arguments keyword , where as remaining types does.
              [except arrow type we can pass any no.of args irrespective of no.of parameters]
-=============================================================================================================================================
+
 Arrays :
         a container to store mutple values
 
@@ -211,7 +211,7 @@ Arrays :
             4)arr.shift() - removes element at the beginning and returns it.
             5)arr.indexOf(element) - return the index of the element , if array doesn't contain that element it returns -1.
             6)arr.includes(element) - tells whether the passed element is present or not (return true or false).
-=============================================================================================================================================
+
 Objects : stores related data as property - value pairs and can also contain functios specific to that object .
 
 
@@ -252,7 +252,7 @@ can also access property values with [] :
         this is nothing but that object .
 
         when properties need to be accessed dynamically brackets[] are used .
-==================================================================================================================================================
+
 
 Loops :     (CONTROL STATEMENTS)
        for loop :
