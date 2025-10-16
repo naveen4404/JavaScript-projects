@@ -1,9 +1,6 @@
 Javascript is a hight level object oriented and multi paradigm programming language.
-
 multiparadigm- flexible and versatile , can use all types of programming styles
-
 oop-mostly based on objects
-
 ES6 - ECMAScript
 ===============================================================================================================================================
 Datatypes:
@@ -13,7 +10,6 @@ Datatypes:
     null (nothing , empty , value unknown)
     undefined (empty , value not assigned )
     bigint
-============================================================================================================================================
 
 variable - "named storage of data" 
 value - any data or unit of information
@@ -160,12 +156,11 @@ Switch statement :
                     break;
             default ://statements
         }
-============================================================================================================================================
 strict mode :
         'use strict'
         allows developer to write more secure code
         shows errors those are skipped by Javascript
-============================================================================================================================================
+
 Functions :
             block of code that does a specific task
             can be reused any no of times in the code
